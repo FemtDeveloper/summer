@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { UiContext } from "../../../context/ui";
 
 const navLinks = [
   { pageTitle: "Blusas", pageLink: "blusas" },
@@ -9,8 +10,10 @@ const navLinks = [
 ];
 
 const Sidebar = () => {
+  const { isMenuOpen } = useContext(UiContext);
+
   return (
-    <nav className="sidebar">
+    <nav className={`sidebar${isMenuOpen ? " active" : ""}`}>
       <ul className="sidebar__list">
         {navLinks.map(({ pageLink, pageTitle }) => (
           <li key={pageLink}>

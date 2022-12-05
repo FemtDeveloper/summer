@@ -39,6 +39,8 @@
   top: 60px;
   bottom: 0;
   left: 0;
+  font-weight: 500;
+  transition: all 0.5s;
 }
 
 .sidebar__list {
@@ -61,8 +63,13 @@
 }
 
 @media (min-width: 768px) {
+  .sidebar.active {
+    display: flex;
+    left: 0;
+  }
   .sidebar {
     display: flex;
+    left: -140px;
   }
 }
 .error-page {
